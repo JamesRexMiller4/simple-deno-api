@@ -32,5 +32,17 @@ const getProducts = ({ response }: { response: any }) => {
     }
 }
 
+// @desc  Get a product
+// @route GET /api/v1/products/{id}
+
+const getProduct = ({ response, id }: { response: any, id: String }) => {
+  const product = products.find(product => product.id === id)
+  response.body = {
+    "success": true,
+    "data": product
+  }
+}
+
+
 
 export { getProducts }
